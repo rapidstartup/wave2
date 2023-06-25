@@ -68,11 +68,13 @@
             "@php artisan storage:link"
         ],
         "post-install-cmd": [
+            "nvm install 14 && nvm use 14",
             "@php artisan clear-compiled",
             "@php artisan optimize",
             "npm install"
         ],
         "post-update-cmd": [
+            "nvm install 14 && nvm use 14",
             "@php artisan clear-compiled",
             "@php artisan optimize",
             "npm install && npm run build"
