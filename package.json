@@ -3,6 +3,7 @@
     "node": "17.x"
   },
   "scripts": {
+    "node-version": "node --version",
     "dev": "npx tailwindcss -i ./public/css/style.css -o ./public/style.css --watch",
     "build": "npx tailwindcss -i ./public/css/style.css -o ./public/style.css"
   },
