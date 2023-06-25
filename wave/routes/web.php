@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::impersonate();
 
-Route::get('/', '\Wave\Http\Controllers\HomeController@index')->name('wave.home');
+#Route::get('/', '\Wave\Http\Controllers\HomeController@index')->name('wave.home');
+Route::get('/', function () {    return view('index'); });
 Route::get('@{username}', '\Wave\Http\Controllers\ProfileController@index')->name('wave.profile');
 
 // Documentation routes
