@@ -1,5 +1,13 @@
 {
   "engines": {
     "node": "17.x"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./homepage/css/style.css -o ./homepage/style.css --watch",
+    "build": "npx tailwindcss -i ./homepage/css/style.css -o ./homepage/style.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "tailwindcss": "^3.3.2"
   }
 }
