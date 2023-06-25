@@ -3,8 +3,8 @@
     "node": "17.x"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./homepage/css/style.css -o ./homepage/style.css --watch",
-    "build": "npx tailwindcss -i ./homepage/css/style.css -o ./homepage/style.css"
+    "dev": "npx tailwindcss -i ./css/style.css -o ./style.css --watch",
+    "build": "npx tailwindcss -i ./css/style.css -o ./style.css"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
