@@ -75,7 +75,7 @@
         "post-update-cmd": [
             "@php artisan clear-compiled",
             "@php artisan optimize",
-            "npm install && npm run build"
+            "cd public && npm install && npm run build"
         ]
     },
     "config": {
