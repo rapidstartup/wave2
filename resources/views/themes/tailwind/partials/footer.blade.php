@@ -1,6 +1,6 @@
 
 <!-- Section 1 -->
-<footer class="@if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif">
+<footer class="@if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif bg-slate-900 text-slate-50">
     <div class="px-8 pt-16 mx-auto lg:px-12 xl:px-16 max-w-7xl">
         <div class="flex flex-wrap items-start justify-between pb-20">
             <a href="#_" class="flex items-center w-auto text-lg font-bold md:w-1/6">
@@ -13,7 +13,7 @@
                     </div>
                 @endif
             </a>
-            <div class="grid w-full grid-cols-2 pt-2 mt-20 sm:grid-cols-4 gap-y-16 lg:gap-x-8 md:w-5/6 md:mt-0 md:pr-6">
+           <!-- <div class="grid w-full grid-cols-2 pt-2 mt-20 sm:grid-cols-4 gap-y-16 lg:gap-x-8 md:w-5/6 md:mt-0 md:pr-6">
                 <div class="md:justify-self-end">
                     <h3 class="font-semibold text-black">Product</h3>
                     <ul class="mt-6 space-y-4 text-sm">
@@ -137,7 +137,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="flex flex-col items-center justify-between py-10 border-t border-solid lg:flex-row border-gray">
             <ul class="flex flex-wrap space-x-5 text-xs">
