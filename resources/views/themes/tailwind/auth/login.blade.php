@@ -1,12 +1,12 @@
 @extends('theme::layouts.app')
 
 @section('content')
-    <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-36 blur-2xl opacity-70 pointer-events-none -z-10" aria-hidden="true">
+    <div class="md:block absolute left-1/2 -translate-x-1/2 -mt-36 blur-2xl opacity-70 pointer-events-none -z-10" style="--tw-blur: blur(40px); filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);" aria-hidden="true">
         <img src="./images/auth-illustration.svg" class="max-w-none" width="1440" height="450" alt="Page Illustration">
     </div>
     <div class="flex flex-col justify-center py-20 sm:px-6 lg:px-8 bg-slate-900 text-slate-200" style="--tw-bg-opacity: 1; background-color: rgb(15 23 42 / var(--tw-bg-opacity)); --tw-text-opacity: 1; color: rgb(226 232 240 / var(--tw-text-opacity));">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 class="mt-6 text-3xl font-extrabold leading-9 text-center bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 lg:text-5xl">
+            <h2 class="mt-6 text-3xl font-extrabold leading-9 text-white text-center bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 lg:text-5xl">
                 Sign in Below
             </h2>
             <p class="mt-4 text-sm leading-5 text-center text-gray-600 max-w">
