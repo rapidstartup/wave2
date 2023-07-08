@@ -9,6 +9,12 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_85836cc7902dfd7bbb46ecbb6a19bac07'
+        });
+    </script>
     @if(isset($seo->title))
         <title>{{ $seo->title }}</title>
     @else
