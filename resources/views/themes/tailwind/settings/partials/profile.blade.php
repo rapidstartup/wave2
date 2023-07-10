@@ -16,14 +16,14 @@
 			<div>
 				<label for="name" class="block text-sm font-medium leading-5 text-gray-700 dark:text-white">Name</label>
 				<div class="mt-1 rounded-md shadow-sm">
-					<input id="name" type="text" name="name" placeholder="Name" value="{{ Auth::user()->name }}" required class="w-full form-input dark:bg-gray-800">
+					<input id="name" type="text" name="name" placeholder="Name" value="{{ Auth::user()->name }}" required class="w-full form-input "> <!-- dark:bg-gray-800 -->
 				</div>
 			</div>
 
 			<div class="mt-5">
 				<label for="email" class="block text-sm font-medium leading-5 text-gray-700 dark:text-white">Email Address</label>
 				<div class="mt-1 rounded-md shadow-sm">
-					<input id="email" type="text" name="email" placeholder="Email Address" value="{{ Auth::user()->email }}" required class="w-full form-input dark:bg-gray-800">
+					<input id="email" type="text" name="email" placeholder="Email Address" value="{{ Auth::user()->email }}" required class="w-full form-input">  <!--dark:bg-gray-800-->
 				</div>
 			</div>
 

@@ -51,8 +51,9 @@
 
         <!-- Styles -->
         <link href="{{ asset('themes/' . $theme->folder . '/css/app.css') }}" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="flex flex-col min-h-screen @if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif @if(config('wave.dev_bar')){{ 'pb-10' }}@endif">
+    <body class="flex flex-col min-h-screen @if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif @if(config('wave.dev_bar')){{ 'pb-10' }}@endif bg-white dark:bg-black">
 
         @if(config('wave.demo') && Request::is('/'))
             @include('theme::partials.demo-header')
@@ -90,6 +91,11 @@
         @waveCheckout
         <!-- Scripts -->
         <script>
+            //enable dark mode
+            tailwind.config = {
+                darkMode: 'class'
+            }
+
             var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
             var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
             // Change the icons inside the button based on previous settings
@@ -127,3 +133,4 @@
 
     </body>
     </html>
+     
