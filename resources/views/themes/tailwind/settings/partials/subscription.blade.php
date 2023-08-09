@@ -1,6 +1,6 @@
 <div class="p-8">
     @if(auth()->user()->hasRole('admin'))
-        <p>This user is an admin user and therefore does not need a subscription</p>
+        <p class="text">This user is an admin user and therefore does not need a subscription</p>
     @else
         @if(auth()->user()->subscriber())
             <div class="flex flex-col">

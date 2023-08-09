@@ -3,6 +3,8 @@
 namespace Wave\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\MonthlyInterest;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('theme::dashboard.index');
+        return redirect('/dashboard/home');
     }
 }

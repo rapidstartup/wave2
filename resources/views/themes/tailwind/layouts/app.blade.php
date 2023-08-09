@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -9,6 +10,18 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+
+    <script>
+        if(localStorage.getItem('darkMode') === 'enabled' || !(localStorage.getItem('darkMode') in localStorage))
+        {
+            var x = document.documentElement.classList.add('dark-section');
+            console.log(x);
+        } else {
+            document.documentElement.classList.remove('dark-section');
+        }
+
+    </script>
+
     <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
     <script>
         Weglot.initialize({
@@ -57,6 +70,53 @@
 
     <!-- Styles -->
     <link href="{{ asset('themes/' . $theme->folder . '/css/app.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    
+{{--    @vite(['resources/css/app.css','resources/js/app.js'])--}}
+
+    <style>
+        main, header, footer, .dark-section,  .input-field-dark {
+            transition: 0.5s background ease;
+        }
+        .dark {
+            background: #151521;
+            border-color: #2b2b40;
+        }
+        .semi-dark{
+            background: #1e1e2d;
+            border-color: #2b2b40;
+        }
+
+        /*Light Content*/
+        .text-light {
+            color: #9ca3af;
+        }
+        .border-color-light {
+            /*border-color: #9ca3af;*/
+            border-color: #2b2b40;
+        }
+
+        .input-field-dark {
+            background-color: #151521;
+            color: #9ca3af;
+        }
+
+        /*Notification Menu Border Dark*/
+        .notification-menu-border-dark {
+            border: 0;
+            background-color: #151521;
+        }
+
+        /*User Menus Border Color*/
+        .border-color-dark {
+            border-color: #151521;
+        }
+
+
+    </style>
 </head>
 <body class="flex flex-col min-h-screen @if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif @if(config('wave.dev_bar')){{ 'pb-10' }}@endif">
 
@@ -137,6 +197,117 @@
             }
 
         });
+
+</script>
+
+
+
+    <script>
+        let darkMode = localStorage.getItem('darkMode');
+
+        function enableDarkMode() {
+            $("main").addClass('dark');
+            $("header").addClass('semi-dark');
+            $("footer").addClass('semi-dark');
+
+            $(".dark-section").addClass('dark');
+
+            // For text
+            $('.text').addClass('text-light');
+            $('.border-color').addClass('border-color-light');
+            $('span.bigText').removeClass('g-text');
+            $('i.fa-solid').removeClass('fa-color');
+
+
+            // Set Goad Purpose
+            $('input#funds_for').addClass('input-field-dark');
+            // Refer User Input Field
+            $('input.refer-user').addClass('input-field-dark');
+
+            // Create Ticket Subject Input
+            $('input#subject').addClass('input-field-dark');
+            // Create Ticket Message Textarea
+            $('textarea#message').addClass('input-field-dark');
+            // Create Ticket file Textarea
+            $('input#file').addClass('input-field-dark');
+
+            // Settings Fields
+            $('input.settings').addClass('input-field-dark');
+            $('textarea[name*=about]').addClass('input-field-dark');
+            //Api Key Horizontal Line
+            $('hr.hr').addClass('border-color-light');
+
+            // Notification Menu
+            $('div.notification-menu').addClass('notification-menu-border-dark');
+
+            // User Menu Border Setting
+            $('div#user-menu').addClass('border-color-dark');
+            // User Menu Border Setting
+            $('div.border-light').addClass('border-color-light');
+
+            localStorage.setItem('darkMode', 'enabled');
+        }
+
+        function disableDarkMode() {
+            $("main").removeClass('dark');
+            $("header").removeClass('semi-dark');
+            $("footer").removeClass('semi-dark');
+
+            $(".dark-section").removeClass('dark');
+            // For text
+            $('.text').removeClass('text-light');
+            $('.border-color').removeClass('border-color-light');
+            $('span.bigText').addClass('g-text');
+            $('i.fa-solid').addClass('fa-color');
+
+
+            // Set Goal Purpose
+            $('input#funds_for').removeClass('input-field-dark');
+            // Refer User Input Field
+            $('input.refer-user').removeClass('input-field-dark');
+
+            // Create Ticket Subject Input
+            $('input#subject').removeClass('input-field-dark');
+            // Create Ticket Message Textarea
+            $('textarea#message').removeClass('input-field-dark');
+            // Create Ticket file Textarea
+            $('input#file').removeClass('input-field-dark');
+
+            // Settings Fields
+            $('input.settings').removeClass('input-field-dark');
+            $('textarea[name*=about]').removeClass('input-field-dark');
+            //Api Key Horizontal Line
+            $('hr.hr').removeClass('border-color-light');
+
+            // Notification Menu
+            $('div.notification-menu').removeClass('notification-menu-border-dark');
+            // User Menu Border Setting
+            $('div#user-menu').removeClass('border-color-dark');
+            // User Menu Border Setting
+            $('div.border-light').removeClass('border-color-light');
+
+
+            localStorage.setItem('darkMode', null);
+        }
+
+        if(darkMode === 'enabled'){
+            enableDarkMode();
+        }
+
+        $('#theme-toggle').on("click", () => {
+            darkMode = localStorage.getItem('darkMode');
+            if(darkMode !== 'enabled')
+            {
+                enableDarkMode();
+                console.log(darkMode);
+            } else {
+                disableDarkMode();
+                console.log(darkMode);
+            }
+
+        });
+
+
     </script>
 </body>
 </html>

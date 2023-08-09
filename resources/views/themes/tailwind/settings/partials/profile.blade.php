@@ -14,21 +14,21 @@
 		</div>
 		<div class="w-full lg:w-9/12 xl:w-4/5">
 			<div>
-				<label for="name" class="block text-sm font-medium leading-5 text-gray-700">Name</label>
+				<label for="name" class="text block text-sm font-medium leading-5 text-gray-700">Name</label>
 				<div class="mt-1 rounded-md shadow-sm">
-					<input id="name" type="text" name="name" placeholder="Name" value="{{ Auth::user()->name }}" required class="w-full form-input">
+					<input id="name" type="text" name="name" placeholder="Name" value="{{ Auth::user()->name }}" required class="settings w-full form-input">
 				</div>
 			</div>
 
 			<div class="mt-5">
-				<label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email Address</label>
+				<label for="email" class="text block text-sm font-medium leading-5 text-gray-700">Email Address</label>
 				<div class="mt-1 rounded-md shadow-sm">
-					<input id="email" type="text" name="email" placeholder="Email Address" value="{{ Auth::user()->email }}" required class="w-full form-input">
+					<input id="email" type="text" name="email" placeholder="Email Address" value="{{ Auth::user()->email }}" required class="settings w-full form-input">
 				</div>
 			</div>
 
 			<div class="mt-5">
-				<label for="about" class="block text-sm font-medium leading-5 text-gray-700">About</label>
+				<label for="about" class="text block text-sm font-medium leading-5 text-gray-700">About</label>
 				<div class="mt-1 rounded-md">
 					{!! profile_field('text_area', 'about') !!}
 				</div>

@@ -1,9 +1,9 @@
 <div class="flex flex-col px-10 py-8">
 	<form action="{{ route('wave.settings.api.post') }}" method="POST">
 		<div>
-			<label for="key_name" class="block text-sm font-medium leading-5 text-gray-700">Create a new API Key</label>
+			<label for="key_name" class="text block text-sm font-medium leading-5 text-gray-700">Create a new API Key</label>
 			<div class="mt-1 rounded-md shadow-sm">
-				<input id="key_name" type="text" name="key_name" placeholder="Key Name" class="w-full form-input">
+				<input id="key_name" type="text" name="key_name" placeholder="Key Name" class="settings w-full form-input">
 			</div>
 		</div>
 
@@ -13,10 +13,10 @@
 
 		{{ csrf_field() }}
 	</form>
-	<hr class="my-12 border-gray-200">
+	<hr class="hr my-12 border-gray-200">
 	@if(count(auth()->user()->apiKeys) > 0)
 
-		<p class="block text-sm font-medium leading-5 text-gray-700">Current API Keys</p>
+		<p class="text block text-sm font-medium leading-5 text-gray-700">Current API Keys</p>
 
 		<div class="mt-2 overflow-hidden border border-gray-150 sm:rounded">
 			<table class="min-w-full divide-y divide-gray-200">
@@ -207,6 +207,6 @@
 			<!-- END Delete API Key -->
 
 	@else
-		<p class="w-full text-sm text-center text-gray-600">No API Keys Created Yet.</p>
+		<p class="text w-full text-sm text-center text-gray-600">No API Keys Created Yet.</p>
 	@endif
 </div>
