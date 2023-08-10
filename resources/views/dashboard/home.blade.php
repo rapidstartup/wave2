@@ -12,7 +12,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    
+
     <style>
         .saving-goal-form {
             margin: 0 13px;
@@ -286,7 +286,7 @@
                             <div>
                                 <i class="fa-color fa-solid fa-chart-line bigIcon"></i>
                             </div>
-                            <span class="g-text bigText">{{$monthly_interest['interest_value']}}%</span><br>
+                            <span class="g-text bigText">{{isset($monthly_interest['interest_value']) ? $monthly_interest['interest_value'] : "0.00" }}%</span><br>
                             <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2 ">Previous month interest value</p>
                         </div>
                     </div>
