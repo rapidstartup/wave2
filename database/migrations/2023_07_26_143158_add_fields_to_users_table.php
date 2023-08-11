@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
 //            $table->double('balance', 10, 2)->default(0)->nullable();
-            $table->enum('state', ['active', 'idle']);
-            $table->date('birth_date')->nullable();
-            $table->string('gender')->nullable();
-            $table->string('country')->nullable();
-            $table->text('address')->nullable();
-            $table->bigInteger('zip')->nullable();
+//            $table->enum('state', ['active', 'idle']);
+//            $table->date('birth_date')->nullable();
+//            $table->string('gender')->nullable();
+//            $table->string('country')->nullable();
+//            $table->text('address')->nullable();
+//            $table->bigInteger('zip')->nullable();
         });
     }
 
@@ -32,13 +32,13 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('balance');
-            $table->dropColumn('state');
-            $table->dropColumn('birth_date');
-            $table->dropColumn('gender');
-            $table->dropColumn('country');
-            $table->dropColumn('address');
-            $table->dropColumn('zip');
+//            $table->dropColumn('balance');
+//            $table->dropColumn('state');
+//            $table->dropColumn('birth_date');
+//            $table->dropColumn('gender');
+//            $table->dropColumn('country');
+//            $table->dropColumn('address');
+//            $table->dropColumn('zip');
         });
     }
 };
