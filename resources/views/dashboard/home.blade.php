@@ -10,6 +10,9 @@
 {{--    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>--}}
 
 
+
+
+<!-- For graph -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <style>
