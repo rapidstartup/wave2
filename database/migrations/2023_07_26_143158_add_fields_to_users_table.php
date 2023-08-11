@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->double('balance', 10, 2)->default(0)->nullable();
+//            $table->double('balance', 10, 2)->default(0)->nullable();
             $table->enum('state', ['active', 'idle']);
             $table->date('birth_date')->nullable();
             $table->string('gender')->nullable();
