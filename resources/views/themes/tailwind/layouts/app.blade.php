@@ -116,6 +116,112 @@
         }
 
 
+        /* Custom Dark Theme CSS Styles */
+        /* Header section */
+        header#nav-header {
+            background: #1e1e2d;
+            border-color: #2b2b40;
+        }
+        header#nav-header a {
+            color: #9ca3af;
+        }
+        /* Header section ends */
+
+        /* Main section */
+        main#main-section {
+            background: #151521;
+            border-color: #2b2b40;
+        }
+        /* Main section ends */
+
+        /* Footer section */
+        footer#footer-section {
+            background: #1e1e2d;
+            border-color: #2b2b40;
+        }
+        footer#footer-section div.border-color {
+            border-color: #2b2b40;
+        }
+        ul.footer-links > li.text{
+            color: #9ca3af !important;
+        }
+        ul.footer-links > li.text > a{
+            color: #9ca3af !important;
+        }
+        /* Footer section ends */
+
+        /* Right and left panel common css classes */
+        div.dark-section {
+            background: #151521;
+            border-color: #2b2b40;
+        }
+        .text, div > i.fa-color, span.g-text {
+            color: #9ca3af !important;
+        }
+        input[type='text'] {
+            background: #151521;
+            color: #9ca3af;
+        }
+        .hover\:text-gray-900:hover {
+            --tw-text-opacity: 1;
+            color: rgb(17 24 39/var(--tw-text-opacity)) !important;
+        }
+        .hover\:text-gray-900:active {
+            --tw-text-opacity: 1;
+            color: rgb(17 24 39/var(--tw-text-opacity)) !important;
+        }
+
+        /* Transaction view section */
+        hr.field-underline {
+            width: 95%;
+            margin-left: 1.5rem;
+            height: 2px;
+            border-radius: 50px;
+            border-color: #2b2b40;
+        }
+
+        /* Create support ticket */
+        input[type='file'] {
+            background: #151521;
+            color: #9ca3af;
+        }
+        textarea[id='message'] {
+            background: #151521;
+            color: #9ca3af;
+        }
+        
+        /* Profile Textarea */
+        textarea[name='about'] {
+            background: #151521;
+            color: #9ca3af;
+        }
+
+        /* Security Input Fields */
+        input[type='password'] {
+            background: #151521;
+            color: #9ca3af;
+        }
+
+        /* User Dropdown Menu */
+        div#user-menu {
+            border-color: #151521;
+        }
+        .border-t {
+        border-top-width: 1px;
+        border-color: #2b2b40 !important;
+        }
+
+        /* Notification Menu */
+        div.notification-menu {
+            border-color: #151521 !important;
+            background-color: #151521 !important;
+        }
+        
+
+        /* Custom Dark Theme CSS Styles Ends */
+        
+
+
     </style>
 </head>
 <body class="flex flex-col min-h-screen @if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif @if(config('wave.dev_bar')){{ 'pb-10' }}@endif">
@@ -126,7 +232,7 @@
 
     @include('theme::partials.header')
 
-    <main class="flex-grow overflow-x-hidden bg-white dark:bg-gray-800">
+    <main id="main-section" class="flex-grow overflow-x-hidden bg-white dark:bg-gray-800">
         @yield('content')
     </main>
 
@@ -290,22 +396,22 @@
             localStorage.setItem('darkMode', null);
         }
 
-        if(darkMode === 'enabled'){
-            enableDarkMode();
-        }
+        // if(darkMode === 'enabled'){
+        //     enableDarkMode();
+        // }
 
-        $('#theme-toggle').on("click", () => {
-            darkMode = localStorage.getItem('darkMode');
-            if(darkMode !== 'enabled')
-            {
-                enableDarkMode();
-                console.log(darkMode);
-            } else {
-                disableDarkMode();
-                console.log(darkMode);
-            }
+        // $('#theme-toggle').on("click", () => {
+        //     darkMode = localStorage.getItem('darkMode');
+        //     if(darkMode !== 'enabled')
+        //     {
+        //         enableDarkMode();
+        //         console.log(darkMode);
+        //     } else {
+        //         disableDarkMode();
+        //         console.log(darkMode);
+        //     }
 
-        });
+        // });
 
 
     </script>

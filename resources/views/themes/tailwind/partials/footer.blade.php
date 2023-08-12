@@ -1,6 +1,6 @@
 
 <!-- Section 1 -->
-<footer class="@if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif bg-slate-900 text-slate-50">
+<footer id="footer-section" class="@if(Request::is('/')){{ 'bg-white' }}@else{{ 'bg-gray-50' }}@endif bg-slate-900 text-slate-50">
     <div class="px-8 pt-16 mx-auto lg:px-12 xl:px-16 max-w-7xl">
         <div class="flex flex-wrap items-start justify-between pb-20">
             <a href="#_" class="flex items-center w-auto text-lg font-bold md:w-1/6">
@@ -140,21 +140,21 @@
         </div>-->
 
         <div class="border-color flex flex-col items-center justify-between py-10 border-t border-solid lg:flex-row border-gray">
-            <ul class="flex flex-wrap space-x-5 text-xs">
+            <ul class="footer-links flex flex-wrap space-x-5 text-xs">
                 <li class="text mb-6 text-center flex-full lg:flex-none lg:mb-0">&copy; {{ date('Y') }} {{ setting('site.title', 'Laravel Wave') }}, Inc. All rights reserved.</li>
-                <li class="lg:ml-6">
+                <li class="text lg:ml-6">
                     <a href="#_" class="text relative inline-block text-black group">
                         <span class="absolute bottom-0 w-full transition duration-150 ease-out transform -translate-y-1 border-b border-black opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></span>
                         <span>Privacy Policy</span>
                     </a>
                 </li>
-                <li class="ml-auto mr-auto text-center lg:ml-6 lg:mr-0">
+                <li class="text ml-auto mr-auto text-center lg:ml-6 lg:mr-0">
                     <a href="#_" class="text relative inline-block text-black group">
                         <span class="absolute bottom-0 w-full transition duration-150 ease-out transform -translate-y-1 border-b border-black opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></span>
                         <span>Disclaimers</span>
                     </a>
                 </li>
-                <li class="lg:ml-6" style="margin-right: 20px">
+                <li class="text lg:ml-6" style="margin-right: 20px">
                     <a href="#_" class="text relative inline-block text-black group">
                         <span class="absolute bottom-0 w-full transition duration-150 ease-out transform -translate-y-1 border-b border-black opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></span>
                         <span>Terms and Conditions</span>
@@ -162,8 +162,8 @@
                 </li>
             </ul>
 
-            <ul class="flex items-center mt-10 space-x-5 lg:mt-0">
-                <li>
+            <ul class="footer-links flex items-center mt-10 space-x-5 lg:mt-0">
+                <li class="text">
                     <a href="#" class="text-gray-600 hover:text-gray-900">
                         <span class="sr-only">Facebook</span>
                         <svg class="text w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -171,7 +171,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class="text">
                     <a href="#" class="text-gray-600 hover:text-gray-900">
                         <span class="sr-only">Instagram</span>
                         <svg class="text w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -179,7 +179,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class="text">
                     <a href="#" class="text-gray-600 hover:text-gray-900">
                         <span class="sr-only">Twitter</span>
                         <svg class="text w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -187,7 +187,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class="text">
                     <a href="#" class="text-gray-600 hover:text-gray-900">
                         <span class="text sr-only">GitHub</span>
                         <svg class="text w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -195,7 +195,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class="text">
                     <a href="#" class="text-gray-600 hover:text-gray-900">
                         <span class="sr-only">Dribbble</span>
                         <svg class="text w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
