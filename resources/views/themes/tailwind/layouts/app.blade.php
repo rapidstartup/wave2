@@ -216,11 +216,23 @@
             border-color: #151521 !important;
             background-color: #151521 !important;
         }
-        
-
+    
         /* Custom Dark Theme CSS Styles Ends */
         
-
+        a.menu:hover, a.menu:focus {
+            /* background: #2b2b40; */
+            background: #9ca3af;
+            color: #000 !important;
+        }
+        a.menu:hover svg{
+            color: #000 !important;
+        }
+        a.menu:hover span.left-0 {
+            background: #2b2b40;
+         background: #0069ff 
+    
+        }
+    
 
     </style>
 </head>
