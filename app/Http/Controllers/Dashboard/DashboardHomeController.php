@@ -28,4 +28,17 @@ class DashboardHomeController extends Controller
         return view('dashboard.home', compact('monthly_interest'));
     }
 
+
+    // Temporary function for the new menu of 'Set Goal Value' to show the seperate page.
+    // Afterwards we need to make a seperate controller for that.
+    public function setGoalValuePage() {
+        if (Auth::user() == null)
+        {
+            return redirect()->route('login');
+        }
+        $monthly_interest = MonthlyInterest::where('month', '=', 'june')->first();
+        return view('dashboard.set_goal_value.index', compact('monthly_interest'));
+    }
+
+
 }

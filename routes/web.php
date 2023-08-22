@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('dashboard/home', [DashboardHomeController::class, 'home'])->name('dashboard.home');
+Route::get('dashboard/set-goal-value', [DashboardHomeController::class, 'setGoalValuePage'])->name('dashboard.set_goal_value');
 Route::post('dashboard/setGoal', [DashboardHomeController::class, 'store'])->name('dashboard.setGoal');
 Route::get('dashboard/transactions', [TransactionsController::class, 'index'])->name('dashboard.transactions');
 Route::get('dashboard/transaction/{id}', [TransactionsController::class, 'view_transaction'])->name('view.transaction');

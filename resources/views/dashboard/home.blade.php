@@ -32,20 +32,42 @@
             outline: none;
             padding: 0;
             margin: 0;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+
         }
+
+        .range-slider__range:focus 
+        {
+            box-shadow: 0 0 12px #c1ccff;
+        }
+
+
         .range-slider__range::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: #4b5567;
             cursor: pointer;
             -webkit-transition: background 0.15s ease-in-out;
             transition: background 0.15s ease-in-out;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
         }
         .range-slider__range::-webkit-slider-thumb:hover {
             background: #005fe6;
+            width: 20px;
+            height: 20px;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
         }
         .range-slider__range:active::-webkit-slider-thumb {
             background: #005fe6;
@@ -74,10 +96,11 @@
             color: #fff;
             line-height: 20px;
             text-align: center;
-            border-radius: 3px;
-            background: #4b5567;
+            border-radius: 15px;
+            background: #005ee3;;
             padding: 5px 10px;
             margin-left: 2px;
+            box-shadow: 0px 0px 20px 0px #005ee3;
         }
 
         ::-moz-range-track {
@@ -94,7 +117,7 @@
 
         #right-panel
         {
-            height: 1550px;
+            height: 1450px;
         }
 
         div.shadowedBox-wrapper{
@@ -102,7 +125,7 @@
             text-align: center;
         }
         .shadowedBox {
-            box-shadow: 0px 5px 30px 10px rgb(0,0,0,.1);
+            box-shadow: 0px 1px 4px 10px rgb(0,0,0,.1);
             border-radius: 25px;
             padding: 35px 12px;
             margin: 0 3px;
@@ -181,6 +204,7 @@
 
         .col2-3 {
             text-align: center;
+            width: 100%;
         }
         div.icenter {
             text-align: center;
@@ -201,6 +225,11 @@
         .input-field-dark {
             background-color: #151521;
             color: #9ca3af;
+        }
+        textarea#funds_for {
+            background-color: #151521;
+            color: #9ca3af;
+            resize: none;
         }
 
         /*Chart CSS*/
@@ -253,18 +282,19 @@
                         <div>
                             <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
                             <div class="mt-1 rounded-md shadow-sm">
-                                <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input">
+                                <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
+                                <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
                             </div>
                         </div>
 
                         <div class="flex justify-end w-full mt-2">
-                            <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Save</button>
+                            <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
                         </div>
                     </div>
                 </form>
 
-                {{----------------------------------------}}
-                <div class="shadowedBox-wrapper">
+                <!-- ---------------------------------------- -->
+                <!-- <div class="shadowedBox-wrapper">
                     <div class="col1-4 shadowedBox">
                         <div class="text content">
                             <div>
@@ -301,9 +331,9 @@
                             <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2">Open Tickets</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                {{---------------------------}}
+                <!-- --------------------------- -->
 
 
                 <div class="platinum-wallet">
@@ -338,34 +368,10 @@
                 </div>
 
 
-
-{{--                <div class="platinum-wallet">--}}
-{{--                    <span class="text text-lg font-medium leading-6 text-gray-600">PLATINUM WALLET</span>--}}
-{{--                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
-{{--                    <script>--}}
-{{--                        google.charts.load('current',{packages:['corechart']});--}}
-{{--                        google.charts.setOnLoadCallback(drawChart);--}}
-
-{{--                        function drawChart() {--}}
-{{--                            // Set Data--}}
-
-{{--                            var data = google.visualization.arrayToDataTable([--}}
-{{--                                ['Month', 'Investment', { role: 'annotation' }],--}}
-{{--                                ["",0.00,"$0.00"],["2023-05-30",0.000,"$0.000"],["2023-07-01",0.000,"$0.000"],--}}
-{{--                            ]);--}}
-{{--                            var options = {hAxis: {title: 'Month'},vAxis: {title: 'Investment'},legend: 'none'};--}}
-
-{{--                            var formatter = new google.visualization.NumberFormat({decimalSymbol: '.',groupingSymbol: '.', negativeColor: 'red', negativeParens: true, prefix: '$ '});--}}
-{{--                            formatter.format(data, 1);--}}
-{{--                            var chart = new google.visualization.AreaChart(document.getElementById('myChart')); chart.draw(data, options);--}}
-{{--                        }--}}
-{{--                    </script>--}}
-{{--                    <div id="myChart" style="width:100%; height:250px;" class="shadowedBox"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 856px; height: 180px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="856" height="180" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="92" y="35" width="673" height="111"></rect></clipPath></defs><rect x="0" y="0" width="856" height="180" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="92" y="35" width="673" height="111" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://platinumpluscapital.com/dashboard/index.php#_ABSTRACT_RENDERER_ID_1)"><g><rect x="92" y="145" width="673" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="92" y="90" width="673" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="92" y="35" width="673" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="92" y="118" width="673" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="92" y="63" width="673" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><g><path d="M92.5,90.5L92.5,90.5L428.5,90.5L764.5,90.5L764.5,90.5Z" stroke="none" stroke-width="0" fill-opacity="0.3" fill="#3366cc"></path></g></g><g><rect x="92" y="90" width="673" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g><g><path d="M92.5,90.5L428.5,90.5L764.5,90.5" stroke="#3366cc" stroke-width="2" fill-opacity="1" fill="none"></path></g><g><rect x="92.5" y="78.5" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect><rect x="428.5" y="78.5" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect><rect x="764.5" y="78.5" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect></g></g><g></g><g><g><text text-anchor="middle" x="428.5" y="159.71666666666667" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#222222">2023-05-30</text></g><g><text text-anchor="middle" x="764.5" y="159.71666666666667" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#222222">2023-07-01</text></g><g><text text-anchor="end" x="79" y="150.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">-1</text></g><g><text text-anchor="end" x="79" y="95.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="end" x="79" y="40.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#444444">1</text></g></g><g><g><g><rect x="80.5" y="64.5" width="25" height="15" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="middle" x="92.5" y="76.55" font-family="Arial" font-size="13" stroke="#ffffff" stroke-width="3" fill="#3366cc" aria-hidden="true">$0.00</text><text text-anchor="middle" x="92.5" y="76.55" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#3366cc">$0.00</text></g><rect x="82.5" y="65.5" width="20" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g></g><g><g><rect x="414.5" y="64.5" width="29" height="15" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="middle" x="428.5" y="76.55" font-family="Arial" font-size="13" stroke="#ffffff" stroke-width="3" fill="#3366cc" aria-hidden="true">$0.000</text><text text-anchor="middle" x="428.5" y="76.55" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#3366cc">$0.000</text></g><rect x="416.5" y="65.5" width="24" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g></g><g><g><rect x="750.5" y="64.5" width="29" height="15" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="middle" x="764.5" y="76.55" font-family="Arial" font-size="13" stroke="#ffffff" stroke-width="3" fill="#3366cc" aria-hidden="true">$0.000</text><text text-anchor="middle" x="764.5" y="76.55" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#3366cc">$0.000</text></g><rect x="752.5" y="65.5" width="24" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g></g></g></g><g><g><text text-anchor="middle" x="428.5" y="175.38333333333333" font-family="Arial" font-size="13" font-style="italic" stroke="none" stroke-width="0" fill="#222222">Month</text><rect x="92" y="164.33333333333331" width="673" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><text text-anchor="middle" x="40.55" y="90.5" font-family="Arial" font-size="13" font-style="italic" transform="rotate(-90 40.55 90.5)" stroke="none" stroke-width="0" fill="#222222">Investment</text><path d="M29.499999999999996,146L29.500000000000004,35L42.50000000000001,35L42.5,146Z" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></path></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Month</th><th>Investment</th></tr></thead><tbody><tr><td></td><td>$ 0.00</td></tr><tr><td>2023-05-30</td><td>$ 0.00</td></tr><tr><td>2023-07-01</td><td>$ 0.00</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 190px; left: 866px; white-space: nowrap; font-family: Arial; font-size: 13px;">$0.000</div><div></div></div></div>--}}
-{{--                </div>--}}
-{{--                --------------------------------}}
+                <!-- -------------------------------- -->
 
                 <div class="col1-col2-wrapper">
-                    <div class="col1-3">
+                    <!-- <div class="col1-3">
                         <div class="shadowedBox">
                             <span class="text text-3xl font-medium leading-tight text-gray-600">Refer users</span>
                             <div class="icenter">
@@ -374,7 +380,7 @@
                             <input type="text" readonly class="refer-user col1-1" value="https://platinumpluscapital.com/dashboard/register.php?r=jameshendrix">
                             <p class="text mt-5 text-base font-medium leading-tight text-gray-600">Use this link to refer users and get paid for each registered user.</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col2-3">
                         <div class="shadowedBox posts-section">
