@@ -16,108 +16,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <style>
-        .saving-goal-form {
-            margin: 0 13px;
-        }
-        .range-slider {
-            width: 100%;
-        }
-
-        .range-slider__range {
-            -webkit-appearance: none;
-            width: calc(97% - (73px));
-            height: 5px;
-            border-radius: 5px;
-            background: #d7dcdf;
-            outline: none;
-            padding: 0;
-            margin: 0;
-            -webkit-transition: all 0.30s ease-in-out;
-            -moz-transition: all 0.30s ease-in-out;
-            -ms-transition: all 0.30s ease-in-out;
-            -o-transition: all 0.30s ease-in-out;
-
-        }
-
-        .range-slider__range:focus 
-        {
-            box-shadow: 0 0 12px #c1ccff;
-        }
-
-
-        .range-slider__range::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #4b5567;
-            cursor: pointer;
-            -webkit-transition: background 0.15s ease-in-out;
-            transition: background 0.15s ease-in-out;
-            -webkit-transition: all 0.30s ease-in-out;
-            -moz-transition: all 0.30s ease-in-out;
-            -ms-transition: all 0.30s ease-in-out;
-            -o-transition: all 0.30s ease-in-out;
-        }
-        .range-slider__range::-webkit-slider-thumb:hover {
-            background: #005fe6;
-            width: 20px;
-            height: 20px;
-            -webkit-transition: all 0.30s ease-in-out;
-            -moz-transition: all 0.30s ease-in-out;
-            -ms-transition: all 0.30s ease-in-out;
-            -o-transition: all 0.30s ease-in-out;
-        }
-        .range-slider__range:active::-webkit-slider-thumb {
-            background: #005fe6;
-        }
-        .range-slider__range::-moz-range-thumb {
-            width: 15px;
-            height: 15px;
-            border: 0;
-            border-radius: 50%;
-            background: #4b5567;
-            cursor: pointer;
-            -moz-transition: background 0.15s ease-in-out;
-            transition: background 0.15s ease-in-out;
-        }
-        .range-slider__range::-moz-range-thumb:hover {
-            background: #005fe6;
-        }
-        .range-slider__range:active::-moz-range-thumb {
-            background: #005fe6;
-        }
-
-        .range-slider__value {
-            display: inline-block;
-            position: relative;
-            width: 90px;
-            color: #fff;
-            line-height: 20px;
-            text-align: center;
-            border-radius: 15px;
-            background: #005ee3;;
-            padding: 5px 10px;
-            margin-left: 2px;
-            box-shadow: 0px 0px 20px 0px #005ee3;
-        }
-
-        ::-moz-range-track {
-            background: #d7dcdf;
-            border: 0;
-        }
-
-        input::-moz-focus-inner,
-        input::-moz-focus-outer {
-            border: 0;
-        }
-
-        /*-----------------------------*/
-
+    
         #right-panel
         {
-            height: 1450px;
+            height: 1030px;
         }
 
         div.shadowedBox-wrapper{
@@ -226,11 +128,7 @@
             background-color: #151521;
             color: #9ca3af;
         }
-        textarea#funds_for {
-            background-color: #151521;
-            color: #9ca3af;
-            resize: none;
-        }
+        
 
         /*Chart CSS*/
         #myChart {
@@ -266,33 +164,7 @@
                 </div>
             </div>
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
-                <p class="text block text-sm font-medium leading-5 text-gray-700 mt-5" style="margin-left: 40px">Now, you can set your savings goals. Tell us how much you would like to save and what you would use it for!</p>
-
-                <form action="{{ route('dashboard.setGoal') }}" method="POST">
-                    @csrf
-                    <div class="relative flex flex-col px-10 py-8 saving-goal-form">
-
-                        <div class="range-slider">
-                            <label for="interest_goal_value" class="text block text-sm font-medium leading-5 text-gray-700">Set Goal Value</label>
-                            <input class="range-slider__range" id=" interest_goal_value" name="interest_goal_value" type="range" value="0" min="0" step="0.01" max="1000000">
-                            <span class="range-slider__value">0</span>
-                        </div>
-
-                        <br>
-                        <div>
-                            <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
-                            <div class="mt-1 rounded-md shadow-sm">
-                                <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
-                                <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-end w-full mt-2">
-                            <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
-                        </div>
-                    </div>
-                </form>
-
+             
                 <!-- ---------------------------------------- -->
                 <!-- <div class="shadowedBox-wrapper">
                     <div class="col1-4 shadowedBox">
@@ -349,11 +221,26 @@
                             data: {
                                 labels: xValues,
                                 datasets: [{
+                                    // fill: true,
+                                    // lineTension: 0,
+                                    // // backgroundColor: "rgba(0,0,255,0.3)",
+                                    // backgroundColor: "rgba(116,154,217,0.4)",
+                                    // borderColor: "rgba(33,115,244,0.9)",
+                                    // data: yValues
+
                                     fill: true,
-                                    lineTension: 0,
-                                    // backgroundColor: "rgba(0,0,255,0.3)",
-                                    backgroundColor: "rgba(53,53,53,0.4)",
-                                    borderColor: "rgba(224,224,224,0.5)",
+                                    lineTension: 0.2,
+                                    backgroundColor: "rgba(116,154,217,0.4)",
+                                    borderColor: "rgba(33,115,244,0.8)",
+                                    borderWidth: 3,
+                                    pointBorderWidth: 2.5,
+                                    pointHoverRadius: 6,
+                                    pointRadius: 4,
+                                    pointBackgroundColor: "rgba(33,115,244,1)",
+                                    pointHoverBackgroundColor: "rgba(33,115,244,1)",
+                                    pointBorderColor: "rgba(33,115,244,1)",
+                                    pointHoverBorderColor: "rgba(33,115,244,1)",
+                                    steppedLine: false,
                                     data: yValues
                                 }]
                             },
@@ -410,25 +297,25 @@
 
 
     <script>
-        function rangeSlider() {
-            let slider = document.querySelectorAll(".range-slider");
-            let range = document.querySelectorAll(".range-slider__range");
-            let value = document.querySelectorAll(".range-slider__value");
+        // function rangeSlider() {
+        //     let slider = document.querySelectorAll(".range-slider");
+        //     let range = document.querySelectorAll(".range-slider__range");
+        //     let value = document.querySelectorAll(".range-slider__value");
 
-            slider.forEach((currentSlider) => {
-                value.forEach((currentValue) => {
-                    let val = currentValue.previousElementSibling.getAttribute("value");
-                    currentValue.innerText = val;
-                });
+        //     slider.forEach((currentSlider) => {
+        //         value.forEach((currentValue) => {
+        //             let val = currentValue.previousElementSibling.getAttribute("value");
+        //             currentValue.innerText = val;
+        //         });
 
-                range.forEach((elem) => {
-                    elem.addEventListener("input", (eventArgs) => {
-                        elem.nextElementSibling.innerText = eventArgs.target.value;
-                    });
-                });
-            });
-        }
-        rangeSlider();
+        //         range.forEach((elem) => {
+        //             elem.addEventListener("input", (eventArgs) => {
+        //                 elem.nextElementSibling.innerText = eventArgs.target.value;
+        //             });
+        //         });
+        //     });
+        // }
+        // rangeSlider();
 
 
 

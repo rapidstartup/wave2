@@ -13,8 +13,112 @@
     <style>
 		#right-panel
         {
-            height: 1500px;
+            height: 1200px;
         }
+
+        textarea#funds_for {
+            background-color: #151521;
+            color: #9ca3af;
+            resize: none;
+        }
+        /* OLD Range Slider Start */
+        .saving-goal-form {
+            margin: 0 13px;
+        }
+        .range-slider {
+            width: 100%;
+        }
+
+        .range-slider__range {
+            -webkit-appearance: none;
+            width: calc(97% - (73px));
+            height: 5px;
+            border-radius: 5px;
+            background: #d7dcdf;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+
+        }
+
+        .range-slider__range:focus 
+        {
+            box-shadow: 0 0 12px #c1ccff;
+        }
+
+
+        .range-slider__range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4b5567;
+            cursor: pointer;
+            -webkit-transition: background 0.15s ease-in-out;
+            transition: background 0.15s ease-in-out;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+        }
+        .range-slider__range::-webkit-slider-thumb:hover {
+            background: #005fe6;
+            width: 20px;
+            height: 20px;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+        }
+        .range-slider__range:active::-webkit-slider-thumb {
+            background: #005fe6;
+        }
+        .range-slider__range::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            border: 0;
+            border-radius: 50%;
+            background: #4b5567;
+            cursor: pointer;
+            -moz-transition: background 0.15s ease-in-out;
+            transition: background 0.15s ease-in-out;
+        }
+        .range-slider__range::-moz-range-thumb:hover {
+            background: #005fe6;
+        }
+        .range-slider__range:active::-moz-range-thumb {
+            background: #005fe6;
+        }
+
+        .range-slider__value {
+            display: inline-block;
+            position: relative;
+            width: 90px;
+            color: #fff;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 15px;
+            background: #005ee3;;
+            padding: 5px 10px;
+            margin-left: 2px;
+            box-shadow: 0px 0px 20px 0px #005ee3;
+        }
+
+        ::-moz-range-track {
+            background: #d7dcdf;
+            border: 0;
+        }
+
+        input::-moz-focus-inner,
+        input::-moz-focus-outer {
+            border: 0;
+        }
+        /* Old Range Slider Ends */
 
 		/* Slider Input */
     /* .container {
@@ -494,10 +598,38 @@ svg.results__dial {
             </div>
 
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
-                <div class="heading">
-                    <p class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px">Please set your&nbsp;<strong>Goal Value.</strong>&nbsp;</p>
+            <p class="text block text-sm font-medium leading-5 text-gray-700 mt-5" style="margin-left: 40px"><b>Now, you can set your savings goals. Tell us how much you would like to save and what you would use it for!</b></p>
+            
+              <form action="{{ route('dashboard.setGoal') }}" method="POST">
+                  @csrf
+                  <div class="relative flex flex-col px-10 py-8 saving-goal-form">
+
+                      <div class="range-slider">
+                          <label for="interest_goal_value" class="text block text-sm font-medium leading-5 text-gray-700">Set Goal Value</label>
+                          <input class="range-slider__range" id=" interest_goal_value" name="interest_goal_value" type="range" value="0" min="0" step="5000" max="1000000">
+                          <span class="range-slider__value">0</span>
+                      </div>
+
+                      <br>
+                      <div>
+                          <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
+                          <div class="mt-1 rounded-md shadow-sm">
+                              <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
+                              <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
+                          </div>
+                      </div>
+
+                      <div class="flex justify-end w-full mt-2">
+                          <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
+                      </div>
+                  </div>
+              </form>    
+            
+            
+            <div class="heading">
+                    <p class="text block text-sm font-medium leading-5 text-gray-700 mt-5 mb-5" style="margin-left: 40px"><b>Check the status of your&nbsp;<strong>balances</strong>&nbsp;here.</b></p>
                         
-					          <form action="{{ route('dashboard.setGoal') }}" method="POST">
+					          <!-- <form action="{{ route('dashboard.setGoal') }}" method="POST">
                     @csrf
                     <div class="relative flex flex-col px-10 py-8 saving-goal-form">
 
@@ -521,13 +653,15 @@ svg.results__dial {
                             <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Save</button>
                         </div>
                     </div>
-                </form>
+                </form> -->
 
 
 						<div class="container">
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" class="results__dial">
-                    <title>Calculator Savings Dial</title>
+                    
+                  <title>Goal</title>
+                    
                     <g class="results__dial-circles">
                         <path class="results__dial-outer" d="M260,64c110.46,0,200,89.54,200,200S370.46,464,260,464,60,374.46,60,264,149.54,64,260,64" fill="none" stroke="#64d3de" stroke-miterlimit="10" opacity="0.6"/>
                         <path class="results__dial-track" d="M260,86A178,178,0,1,1,82,264,178,178,0,0,1,260,86" fill="none" stroke="#50afb8" stroke-miterlimit="10" stroke-width="8"/>
@@ -643,6 +777,27 @@ svg.results__dial {
     </div>
 
     <script>
+
+        function rangeSlider() {
+            let slider = document.querySelectorAll(".range-slider");
+            let range = document.querySelectorAll(".range-slider__range");
+            let value = document.querySelectorAll(".range-slider__value");
+
+            slider.forEach((currentSlider) => {
+                value.forEach((currentValue) => {
+                    let val = currentValue.previousElementSibling.getAttribute("value");
+                    currentValue.innerText = val;
+                });
+
+                range.forEach((elem) => {
+                    elem.addEventListener("input", (eventArgs) => {
+                        elem.nextElementSibling.innerText = eventArgs.target.value;
+                    });
+                });
+            });
+        }
+        rangeSlider();
+      
 /*  ==========================================================================
     Dial
     ========================================================================== */
@@ -855,6 +1010,9 @@ function showSliderValue() {
   var bulletPosition = rangeSlider.value / rangeSlider.max;
   rangeBullet.style.left = bulletPosition * 820 + "px";
 }
+
+
+
 
     </script>
 @endsection
