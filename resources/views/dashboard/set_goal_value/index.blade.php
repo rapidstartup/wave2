@@ -22,9 +22,7 @@
             resize: none;
         }
         /* OLD Range Slider Start */
-        .saving-goal-form {
-            margin: 0 13px;
-        }
+       
         .range-slider {
             width: 100%;
         }
@@ -75,8 +73,14 @@
             -ms-transition: all 0.30s ease-in-out;
             -o-transition: all 0.30s ease-in-out;
         }
+      
         .range-slider__range:active::-webkit-slider-thumb {
             background: #005fe6;
+        }
+        .range-slider__range:focus::-webkit-slider-thumb {
+            background: #005fe6;
+            width: 20px;
+            height: 20px;
         }
         .range-slider__range::-moz-range-thumb {
             width: 15px;
@@ -577,6 +581,14 @@ svg.results__dial {
 }
 
 
+
+    p.set-monthly-goal {
+      margin: 25px 0 0 40px;
+      font-weight: 600;
+    }
+    hr.seperator {
+      border-color: #2b2b40;
+    }
     </style>
 
     <div class="flex px-8 mx-auto my-6 max-w-7xl xl:px-5">
@@ -598,36 +610,43 @@ svg.results__dial {
             </div>
 
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
-            <p class="text block text-sm font-medium leading-5 text-gray-700 mt-5" style="margin-left: 40px"><b>Now, you can set your savings goals. Tell us how much you would like to save and what you would use it for!</b></p>
             
-              <form action="{{ route('dashboard.setGoal') }}" method="POST">
-                  @csrf
-                  <div class="relative flex flex-col px-10 py-8 saving-goal-form">
+            <div class="set-monthly-goal">
+              <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">SET MONTHLY GOAL</p>
+                <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2" style="margin-left: 40px"><b>Now, you can set your savings goals. Tell us how much you would like to save and what you would use it for!</b></p>
+                <form action="{{ route('dashboard.setGoal') }}" method="POST">
+                    @csrf
+                    <div class="relative flex flex-col px-10 py-8 saving-goal-form">
 
-                      <div class="range-slider">
-                          <label for="interest_goal_value" class="text block text-sm font-medium leading-5 text-gray-700">Set Goal Value</label>
-                          <input class="range-slider__range" id=" interest_goal_value" name="interest_goal_value" type="range" value="0" min="0" step="5000" max="1000000">
-                          <span class="range-slider__value">0</span>
-                      </div>
+                        <div class="range-slider">
+                            <label for="interest_goal_value" class="text block text-sm font-medium leading-5 text-gray-700">Set Goal Value</label>
+                            <input class="range-slider__range" id=" interest_goal_value" name="interest_goal_value" type="range" value="0" min="0" step="5000" max="1000000">
+                            <span class="range-slider__value">0</span>
+                        </div>
 
-                      <br>
-                      <div>
-                          <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
-                          <div class="mt-1 rounded-md shadow-sm">
-                              <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
-                              <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
-                          </div>
-                      </div>
+                        <br>
+                        <div>
+                            <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
+                            <div class="mt-1 rounded-md shadow-sm">
+                                <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
+                                <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
+                            </div>
+                        </div>
 
-                      <div class="flex justify-end w-full mt-2">
-                          <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
-                      </div>
-                  </div>
-              </form>    
+                        <div class="flex justify-end w-full mt-2">
+                            <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
+                        </div>
+                    </div>
+                </form>  
+              
+              </div>
             
+              <hr class="seperator">
             
             <div class="heading">
-                    <p class="text block text-sm font-medium leading-5 text-gray-700 mt-5 mb-5" style="margin-left: 40px"><b>Check the status of your&nbsp;<strong>balances</strong>&nbsp;here.</b></p>
+              <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">BALANCE STATUSES</p>
+                   
+              <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2 mb-5" style="margin-left: 40px"><b>Check the status of your&nbsp;<strong>balances</strong>&nbsp;here.</b></p>
                         
 					          <!-- <form action="{{ route('dashboard.setGoal') }}" method="POST">
                     @csrf
@@ -688,12 +707,12 @@ svg.results__dial {
                             <tspan class="results__dial-perc" text-anchor="start">0</tspan>
                             <tspan baseline-shift="super">%</tspan>
                         </text>
-                        <text class="results__dial-effect results__text" x="154.43" y="236.67" font-size="16" fill="#64d3de">INCREASE IN HAND HYGIENE
-                            <tspan x="175" dy="24">EFFECTIVENESS SAVES:</tspan>
+                        <text class="results__dial-effect results__text text-center" x="175.5" y="260.5" font-size="28" fill="#64d3de">YOUR GOAL
+                            <!-- <tspan x="175" dy="24">EFFECTIVENESS SAVES:</tspan> -->
                         </text>
-                        <text class="results__dial-results results__text" text-anchor="middle" x="250" y="318" fill="#64d3de">
-                            <tspan baseline-shift="super">186$</tspan>
-                            <tspan fill="#fff" class="results__dial-saving">0</tspan>
+                        <text class="results__dial-results results__text" text-anchor="middle" x="250" y="340" fill="#64d3de">
+                            <tspan baseline-shift="super">$</tspan>
+                            <tspan fill="#fff" class="results__dial-saving">186</tspan>
                         </text>
                     </g>
                     <g class="results__dial-drag" fill="#fff">
@@ -734,16 +753,16 @@ svg.results__dial {
                         <text x="250" y="495.99">50%</text>
                     </g>
                     <g class="">
-                        <text class="results__dial-perc-text results__text" x="272" y="203.98" fill="#fff">
+                    <text class="results__dial-perc-text results__text" x="272" y="203.98" fill="#fff">
                             <tspan class="results__dial-perc" text-anchor="start">0</tspan>
                             <tspan baseline-shift="super">%</tspan>
                         </text>
-                        <text class="results__dial-effect results__text" x="154.43" y="236.67" font-size="16" fill="#64d3de">INCREASE IN HAND HYGIENE
-                            <tspan x="175" dy="24">EFFECTIVENESS SAVES:</tspan>
+                        <text class="results__dial-effect results__text text-center" x="175.5" y="260.5" font-size="28" fill="#64d3de">YOUR GOAL
+                            <!-- <tspan x="175" dy="24">EFFECTIVENESS SAVES:</tspan> -->
                         </text>
-                        <text class="results__dial-results results__text" text-anchor="middle" x="250" y="318" fill="#64d3de">
+                        <text class="results__dial-results results__text" text-anchor="middle" x="250" y="340" fill="#64d3de">
                             <tspan baseline-shift="super">$</tspan>
-                            <tspan fill="#fff" class="results__dial-saving">0</tspan>
+                            <tspan fill="#fff" class="results__dial-saving">186</tspan>
                         </text>
                     </g>
                     <g class="results__dial-drag" fill="#fff">
@@ -762,15 +781,6 @@ svg.results__dial {
               
 
 						
-						
-
-						
-						
-
-
-
-
-               
             </div>
         </div>
 
@@ -953,7 +963,7 @@ dialTL
 		$drag,
 		0.8,
 		{
-			rotation: 41, // animate to the default 10%
+			rotation: 55, // animate to the default 10%
 			ease: initEasing,
 			onUpdate: function () {
 				dragUpdate();
@@ -962,19 +972,19 @@ dialTL
 		"-=1.0"
 	);
 
-Draggable.create($drag, {
-	type: "rotation",
-	throwProps: true,
-	bounds: { maxRotation: maxRotation, minRotation: 0 },
-	snap: function (endValue) {
-		return Math.round(endValue / rotationSnap) * rotationSnap;
-	},
-	onDrag: dragUpdate,
-	onThrowUpdate: dragUpdate
-});
+// Draggable.create($drag, {
+// 	type: "rotation",
+// 	throwProps: true,
+// 	bounds: { maxRotation: maxRotation, minRotation: 0 },
+// 	snap: function (endValue) {
+// 		return Math.round(endValue / rotationSnap) * rotationSnap;
+// 	},
+// 	onDrag: dragUpdate,
+// 	onThrowUpdate: dragUpdate
+// });
 
 function dragUpdate() {
-	var val = $drag[0]._gsTransform.rotation;
+	// var val = $drag[0]._gsTransform.rotation;
 	var percentage = Math.round(((val / 180) * 100) / 2);
 	savings = Math.round(percentage * decreaseScale * tCost); // 1% savings = 0.006 x total infections cost
 	if (savings < 0) {
