@@ -19,7 +19,7 @@
     
         #right-panel
         {
-            height: 1030px;
+            height: 1220px;
         }
 
         div.shadowedBox-wrapper{
@@ -144,6 +144,14 @@
             width: 100%;
             height: 500px;
         }
+
+        hr.seperator {
+      border-color: #2b2b40;
+        }
+
+        div.latest-posts {
+            margin-top: 35px;
+        }
     </style>
 
     <div class="flex px-8 mx-auto my-6 max-w-7xl xl:px-5">
@@ -210,7 +218,9 @@
 
                 <div class="platinum-wallet">
                     <span class="text text-lg font-medium leading-6 text-gray-600">PLATINUM WALLET</span>
-                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                    <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2"><b>Here is the status of your transactions!</b></p>
+
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
                     <script>
                         const xValues = [50,60,70,80,90,100,110,120,130,140,150];
@@ -254,10 +264,14 @@
                     </script>
                 </div>
 
+                <hr class="seperator">
 
                 <!-- -------------------------------- -->
 
                 <div class="col1-col2-wrapper">
+                <span class="text text-lg font-medium leading-6 text-gray-600">RELEVANT POSTS</span>
+                    <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2 MB-5"><b>Here are the latest posts relevant to your activities.</b></p>
+
                     <!-- <div class="col1-3">
                         <div class="shadowedBox">
                             <span class="text text-3xl font-medium leading-tight text-gray-600">Refer users</span>
@@ -269,7 +283,7 @@
                         </div>
                     </div> -->
 
-                    <div class="col2-3">
+                    <div class="col2-3 latest-posts">
                         <div class="shadowedBox posts-section">
                             <span class="text text-3xl font-medium leading-tight text-gray-600">Latest posts</span><br>
                             <p class="text block text-sm font-medium leading-5 text-gray-600">No post available</p>
