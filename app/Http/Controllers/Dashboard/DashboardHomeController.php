@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MonthlyInterest;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardHomeController extends Controller
@@ -36,8 +37,9 @@ class DashboardHomeController extends Controller
         {
             return redirect()->route('login');
         }
+        $user_balance = Auth::user()->balance;
         $monthly_interest = MonthlyInterest::where('month', '=', 'june')->first();
-        return view('dashboard.set_goal_value.index', compact('monthly_interest'));
+        return view('dashboard.set_goal_value.index', compact('monthly_interest', 'user_balance'));
     }
 
 

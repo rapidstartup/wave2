@@ -725,7 +725,7 @@ svg.results__dial {
                         <text class="results__dial-effect results__text text-center" x="175" y="350" font-size="28" fill="#64d3de">YOUR GOAL</text>
                         <text class="results__dial-results results__text" text-anchor="middle" x="250" y="285" fill="#64d3de">
                             <tspan baseline-shift="super">$</tspan>
-                            <tspan fill="#fff" class="results__dial-saving">186</tspan>
+                            <tspan fill="#fff" class="results__dial-saving">{{ $user_balance }}</tspan>
                         </text>
                     </g>
                    
@@ -770,7 +770,7 @@ svg.results__dial {
                         <text class="results__dial-effect results__text text-center" x="192" y="350" font-size="28" fill="#64d3de">BALANCE</text>
                         <text class="results__dial-results results__text" text-anchor="middle" x="250" y="285" fill="#64d3de">
                             <tspan baseline-shift="super">$</tspan>
-                            <tspan fill="#fff" class="results__dial-saving">186</tspan>
+                            <tspan fill="#fff" class="results__dial-saving">{{ $user_balance }}</tspan>
                         </text>
                     </g>
                     <!-- <g class="results__dial-drag" fill="#fff">
@@ -832,7 +832,7 @@ svg.results__dial {
                         <text class="results__dial-effect results__text text-center" x="200" y="350" font-size="28" fill="#64d3de">CRYPTO</text>
                         <text class="results__dial-results results__text" text-anchor="middle" x="250" y="285" fill="#64d3de">
                             <tspan baseline-shift="super">$</tspan>
-                            <tspan fill="#fff" class="results__dial-saving">186</tspan>
+                            <tspan fill="#fff" class="results__dial-saving">{{ $user_balance }}</tspan>
                         </text>
                     </g>
                     <!-- <g class="results__dial-drag" fill="#fff">
@@ -888,7 +888,7 @@ svg.results__dial {
                         <text class="results__dial-effect results__text text-center" x="175" y="350" font-size="28" fill="#64d3de">FIAT(FOREX)</text>
                         <text class="results__dial-results results__text" text-anchor="middle" x="250" y="285" fill="#64d3de">
                             <tspan baseline-shift="super">$</tspan>
-                            <tspan fill="#fff" class="results__dial-saving">186</tspan>
+                            <tspan fill="#fff" class="results__dial-saving">{{ $user_balance }}</tspan>
                         </text>
                     </g>
                     <!-- <g class="results__dial-drag" fill="#fff">
