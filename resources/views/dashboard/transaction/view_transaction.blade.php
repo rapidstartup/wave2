@@ -1,7 +1,12 @@
 @extends('theme::layouts.app')
 
 @section('content')
+
     <style>
+        #right-panel
+        {
+            height: 1000px;
+        }
         .field-underline {
             width: 95%;
             margin-left: 1.5rem;
@@ -49,7 +54,12 @@
                         <hr class="hr field-underline">
                     </div>
                     <div class="field-content">
-                        <h3 class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px"><strong>Type</strong></h3>
+                        <h3 class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px"><strong>Balance Type</strong></h3>
+                        <p class="text flex text-lg font-small leading-6 text-gray-600 mt-5 mb-2" style="margin-left: 30px">{{ $transaction['balance_type'] }}</p>
+                        <hr class="hr field-underline">
+                    </div>
+                    <div class="field-content">
+                        <h3 class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px"><strong>Transaction Type</strong></h3>
                         <p class="text flex text-lg font-small leading-6 text-gray-600 mt-5 mb-2" style="margin-left: 30px">{{ $transaction['type'] }}</p>
                         <hr class="hr field-underline">
                     </div>

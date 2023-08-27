@@ -100,7 +100,10 @@
                                 Description
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Type
+                                Balance Type
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Transaction Type
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Date Created
@@ -122,6 +125,9 @@
                             </td>
                             <td class="px-6 py-4">
                                 {!! \Illuminate\Support\Str::limit($transaction->description, 20) !!}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{$transaction->balance_type}}
                             </td>
                             <td class="px-6 py-4">
                                 {{$transaction->type}}
