@@ -7,7 +7,7 @@
         }
 
         #right-panel {
-            height: 900px;
+            height: 1053px;
         }
 
         /*Transaction Table Dark Mode Classes*/
@@ -136,7 +136,7 @@
                                     {{$transaction->created_at->format('d/m/Y H:i:s')}}
                                 </td>
                             <td class="px-6 py-4">
-                                <a href="{{ route('view.transaction', $transaction->transaction_id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View Transaction</a>
+                                <a href="{{ route('view.transaction', $transaction->transaction_id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                             </td>
                         </tr>
                         @endforeach
