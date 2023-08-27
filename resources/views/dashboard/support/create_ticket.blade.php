@@ -2,6 +2,10 @@
 
 @section('content')
     <style>
+         #right-panel
+        {
+            height: 700px;
+        }
         .dollar-animation {
             width: 35px;
             height: 35px;
