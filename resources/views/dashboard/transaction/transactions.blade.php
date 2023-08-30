@@ -8,6 +8,7 @@
 
         #right-panel {
             height: 1053px;
+            background-image: radial-gradient(ellipse at left bottom, rgb(21 21 33) -1%, rgb(66 44 110) -1%, rgb(21 21 33) 35%);
         }
 
         /*Transaction Table Dark Mode Classes*/
