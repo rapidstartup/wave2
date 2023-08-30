@@ -69,7 +69,7 @@
     @endif
 
     <!-- Styles -->
-    <link href="{{ asset('themes/' . $theme->folder . '/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('themes/' . $theme->folder . '/css/app.css?1') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
