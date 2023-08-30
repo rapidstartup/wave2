@@ -569,6 +569,8 @@
 
             </div>
 
+            <hr class="seperator">
+            
             <div class="set-monthly-goal">
               <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">SET PORTFOLIO GOAL</p>
                 <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2" style="margin-left: 40px"><b>Now, you can set your port goals. Tell us how much you would like to save and what you would use it for!</b></p>
@@ -599,7 +601,7 @@
 
               </div>
 
-              <hr class="seperator">
+              
 
 
 
