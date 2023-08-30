@@ -145,7 +145,7 @@ class ParticleAnimation {
 
   clearContext() {
     this.context.clearRect(0, 0, this.canvasSize.w, this.canvasSize.h);
-  }  
+  }
 
   drawParticles() {
     this.clearContext();
@@ -232,7 +232,7 @@ class Highlighter {
 
   initContainer() {
     this.containerSize.w = this.container.offsetWidth;
-    this.containerSize.h = this.container.offsetHeight;        
+    this.containerSize.h = this.container.offsetHeight;
   }
 
   onMouseMove(event) {
@@ -258,7 +258,7 @@ class Highlighter {
     this.initContainer();
     window.addEventListener('resize', this.initContainer);
     window.addEventListener('mousemove', this.onMouseMove);
-  }  
+  }
 }
 
 // Init Highlighter
@@ -266,3 +266,12 @@ const highlighters = document.querySelectorAll('[data-highlighter]');
 highlighters.forEach((highlighter) => {
   new Highlighter(highlighter);
 });
+
+document.querySelector('a[href="#book"]').addEventListener('click', function(e) {
+    e.preventDefault(); // prevents default behavior of the anchor tag
+    var bookElement = document.getElementById('book');
+    bookElement.classList.remove('hidden'); // removes the .hidden class
+    bookElement.style.display = 'block'; // un-hides the #book element
+    this.style.display = 'none'; // hides the clicked button
+});
+

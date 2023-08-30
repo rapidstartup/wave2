@@ -11,7 +11,7 @@
             </h2>
             <p class="mt-4 text-sm leading-5 text-center text-gray-600 max-w">
                 or, you can
-                <a href="{{ route('register') }}" class="font-medium transition duration-150 ease-in-out text-purple-500 hover:text-purple-600 focus:outline-none focus:underline">
+                <a href="{{ route('register') }}" class="font-medium transition duration-150 ease-in-out text-wave-500 hover:text-wave-600 focus:outline-none focus:underline">
                     signup here
                 </a>
             </p>
@@ -66,14 +66,14 @@
 
                     <div class="flex items-center justify-between mt-6">
                         <div class="flex items-center">
-                            <input id="remember" name="remember" type="checkbox" class="text-indigo-600 border-0 border-gray-300 rounded shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl" {{ old('remember') ? ' checked' : '' }}>
+                            <input id="remember" name="remember" type="checkbox" class="text-wave-600 border-0 border-gray-300 rounded shadow-sm focus:border-wave-300 focus:ring focus:ring-offset-0 focus:ring-wave-200 focus:ring-opacity-50 rounded-xl" {{ old('remember') ? ' checked' : '' }}>
                             <label for="remember" class="block ml-2 text-sm leading-5 text-white">
                                 Remember me
                             </label>
                         </div>
 
                         <div class="text-sm leading-5">
-                            <a href="{{ route('password.request') }}" class="font-medium transition duration-150 ease-in-out text-purple-500 hover:text-purple-400 focus:outline-none focus:underline">
+                            <a href="{{ route('password.request') }}" class="font-medium transition duration-150 ease-in-out text-wave-500 hover:text-wave-400 focus:outline-none focus:underline">
                                 Forgot your password?
                             </a>
                         </div>
@@ -81,7 +81,7 @@
 
                     <div class="mt-6">
                         <span class="block w-full rounded-md shadow-sm">
-                            <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-purple-600 hover:bg-purple-500 focus:outline-none focus:border-purple-700 active:bg-purple-500">
+                            <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 active:bg-wave-500">
                                 Sign in
                             </button>
                         </span>

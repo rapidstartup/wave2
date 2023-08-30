@@ -4,7 +4,7 @@
 
 
     <div class="sm:mx-auto sm:w-full sm:max-w-md sm:pt-10">
-        <h2 class="text-3xl font-extrabold leading-9 text-center text-gray-900 sm:mt-6 lg:text-5xl">
+        <h2 class="text-3xl font-extrabold leading-9 text-center from-slate-200/60 via-slate-200 to-slate-200/60 sm:mt-6 lg:text-5xl">
             Sign up Below
         </h2>
         <p class="mt-4 text-sm leading-5 text-center text-gray-600 max-w">

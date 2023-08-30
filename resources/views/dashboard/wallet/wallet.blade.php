@@ -36,8 +36,10 @@
 
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
                 <div class="heading">
-                    <p class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px">Welcome to your&nbsp;<strong>Wallet.</strong>&nbsp;Here you can check and manage your finance!
+                    <p class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px">Welcome to your&nbsp;<strong>Wallet.</strong>&nbsp;Here you can check and manage your deposits and withdrawals!
                         <img class="dollar-animation" src="{{ asset('storage/themes/July2023/dollar.gif') }}" alt="Image">
+                    </p>
+                    <p class="text flex text-lg font-small leading-6 text-gray-600 mt-5" style="margin-left: 30px">Balance updates are currently handled manually. Please allow up to 24 hours for your balance to be updated.
                     </p>
                 </div>
             </div>

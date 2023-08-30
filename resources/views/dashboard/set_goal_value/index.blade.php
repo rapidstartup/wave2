@@ -22,7 +22,7 @@
             resize: none;
         }
         /* OLD Range Slider Start */
-       
+
         .range-slider {
             width: 100%;
         }
@@ -43,7 +43,7 @@
 
         }
 
-        .range-slider__range:focus 
+        .range-slider__range:focus
         {
             box-shadow: 0 0 12px #c1ccff;
         }
@@ -73,7 +73,7 @@
             -ms-transition: all 0.30s ease-in-out;
             -o-transition: all 0.30s ease-in-out;
         }
-      
+
         .range-slider__range:active::-webkit-slider-thumb {
             background: #005fe6;
         }
@@ -511,50 +511,18 @@
             </div>
 
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
-            
-            <div class="set-monthly-goal">
-              <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">SET MONTHLY GOAL</p>
-                <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2" style="margin-left: 40px"><b>Now, you can set your savings goals. Tell us how much you would like to save and what you would use it for!</b></p>
-                <form action="{{ route('dashboard.setGoal') }}" method="POST">
-                    @csrf
-                    <div class="relative flex flex-col px-10 py-8 saving-goal-form">
 
-                        <div class="range-slider">
-                            <label for="interest_goal_value" class="text block text-sm font-medium leading-5 text-gray-700">Set Goal Value</label>
-                            <input class="range-slider__range" id=" interest_goal_value" name="interest_goal_value" type="range" value="0" min="0" step="5000" max="1000000">
-                            <span class="range-slider__value">0</span>
-                        </div>
+            <div class="heading goal-graph">
+              <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">GOAL STATUSES</p>
 
-                        <br>
-                        <div>
-                            <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
-                            <div class="mt-1 rounded-md shadow-sm">
-                                <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
-                                <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
-                            </div>
-                        </div>
+              <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2 mb-5" style="margin-left: 40px"><b>Check the status of your portfolio goal here.</b></p>
 
-                        <div class="flex justify-end w-full mt-2">
-                            <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
-                        </div>
-                    </div>
-                </form>  
-              
-              </div>
-            
-              <hr class="seperator">
-            
-            <div class="heading">
-              <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">BALANCE STATUSES</p>
-                   
-              <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2 mb-5" style="margin-left: 40px"><b>Check the status of your balances here.</b></p>
-              
 						<div class="container">
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" class="results__dial">
-                    
+
                   <title>Goal</title>
-                    
+
                     <g class="results__dial-circles">
                         <path class="results__dial-outer" d="M260,64c110.46,0,200,89.54,200,200S370.46,464,260,464,60,374.46,60,264,149.54,64,260,64" fill="none" stroke="#64d3de" stroke-miterlimit="10" opacity="0.6"/>
                         <path class="results__dial-track" d="M260,86A178,178,0,1,1,82,264,178,178,0,0,1,260,86" fill="none" stroke="#50afb8" stroke-miterlimit="10" stroke-width="8"/>
@@ -595,11 +563,45 @@
                             <tspan fill="#fff" class="results__dial-saving">{{ $user_balance }}</tspan>
                         </text>
                     </g>
-                   
+
                 </svg>
 
             </div>
-            
+
+            <div class="set-monthly-goal">
+              <p class="set-monthly-goal text text-lg font-medium leading-6 text-gray-600">SET PORTFOLIO GOAL</p>
+                <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2" style="margin-left: 40px"><b>Now, you can set your port goals. Tell us how much you would like to save and what you would use it for!</b></p>
+                <form action="{{ route('dashboard.setGoal') }}" method="POST">
+                    @csrf
+                    <div class="relative flex flex-col px-10 py-8 saving-goal-form">
+
+                        <div class="range-slider">
+                            <label for="interest_goal_value" class="text block text-sm font-medium leading-5 text-gray-700">Set Goal Value</label>
+                            <input class="range-slider__range" id=" interest_goal_value" name="interest_goal_value" type="range" value="0" min="0" step="5000" max="1000000">
+                            <span class="range-slider__value">0</span>
+                        </div>
+
+                        <br>
+                        <div>
+                            <label for="funds_for" class="text block text-sm font-medium leading-5 text-gray-700">Purpose</label>
+                            <div class="mt-1 rounded-md shadow-sm">
+                                <!-- <input id="funds_for" type="text" name="funds_for" placeholder="Tell us what you would use the funds for" class="w-full form-input"> -->
+                                <textarea name="funds_for" id="funds_for" cols="30" rows="6" placeholder="Tell us what you would use the funds for" class="w-full form-input"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end w-full mt-2">
+                            <button type="submit" class="flex self-end justify-center w-auto px-4 py-2 mt-5 text-sm font-medium text-white transition duration-150 ease-in-out border border-transparent rounded-md bg-wave-600 hover:bg-wave-500 focus:outline-none focus:border-wave-700 focus:shadow-outline-wave active:bg-wave-700">Set Goal</button>
+                        </div>
+                    </div>
+                </form>
+
+              </div>
+
+              <hr class="seperator">
+
+
+
         </div>
 
     </div>
@@ -628,7 +630,7 @@
             });
         }
         rangeSlider();
-      
+
 /*  ==========================================================================
     Dial
     ========================================================================== */
