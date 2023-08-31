@@ -74,7 +74,7 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
-    
+
 {{--    @vite(['resources/css/app.css','resources/js/app.js'])--}}
 
     <style>
@@ -189,7 +189,7 @@
             background: #151521;
             color: #9ca3af;
         }
-        
+
         /* Profile Textarea */
         textarea[name='about'] {
             background: #151521;
@@ -198,6 +198,12 @@
 
         /* Security Input Fields */
         input[type='password'] {
+            background: #151521;
+            color: #9ca3af;
+        }
+
+        /* Email Input Fields */
+        input[type='email'] {
             background: #151521;
             color: #9ca3af;
         }
@@ -216,9 +222,9 @@
             border-color: #151521 !important;
             background-color: #151521 !important;
         }
-    
+
         /* Custom Dark Theme CSS Styles Ends */
-        
+
         a.menu:hover, a.menu:focus {
             /* background: #2b2b40; */
             background: #9ca3af;
@@ -229,10 +235,10 @@
         }
         a.menu:hover span.left-0 {
             background: #2b2b40;
-         background: #0069ff 
-    
+         background: #0069ff
+
         }
-    
+
 
     </style>
 </head>

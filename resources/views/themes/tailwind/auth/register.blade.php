@@ -1,8 +1,10 @@
 @extends('theme::layouts.app')
 
 @section('content')
-
-
+<div class="md:block absolute left-1/2 -translate-x-1/2 -mt-36 blur-2xl opacity-70 pointer-events-none -z-10" style="--tw-blur: blur(40px); filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);" aria-hidden="true">
+        <img src="./images/auth-illustration.svg" class="max-w-none" width="1440" height="450" alt="Page Illustration">
+</div>
+<div class="flex flex-col justify-center py-20 sm:px-6 lg:px-8 bg-slate-900 text-slate-200" style="--tw-bg-opacity: 1; background-color: rgb(15 23 42 / var(--tw-bg-opacity)); --tw-text-opacity: 1; color: rgb(226 232 240 / var(--tw-text-opacity));">
     <div class="sm:mx-auto sm:w-full sm:max-w-md sm:pt-10">
         <h2 class="text-3xl font-extrabold leading-9 text-white text-center from-slate-200/60 via-slate-200 to-slate-200/60 sm:mt-6 lg:text-5xl">
             Sign up Below
@@ -25,7 +27,7 @@
                     <!-- If we want the user to purchase before they can create an account -->
 
                     <div class="pb-3 sm:border-b sm:border-gray-200">
-                        <h3 class="text-lg font-medium leading-6 text-gray-900">
+                        <h3 class="text-lg font-medium leading-6 text-gray-300">
                             Profile
                         </h3>
                         <p class="max-w-2xl mt-1 text-sm leading-5 text-gray-500">
@@ -36,7 +38,7 @@
                     @csrf
 
                     <div class="mt-6">
-                        <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
+                        <label for="name" class="block text-sm font-medium leading-5 text-gray-400">
                             Name
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
@@ -51,7 +53,7 @@
 
                     @if(setting('auth.username_in_registration') && setting('auth.username_in_registration') == 'yes')
                         <div class="mt-6">
-                            <label for="username" class="block text-sm font-medium leading-5 text-gray-700">
+                            <label for="username" class="block text-sm font-medium leading-5 text-gray-400">
                                 Username
                             </label>
                             <div class="mt-1 rounded-md shadow-sm">
@@ -66,7 +68,7 @@
                     @endif
 
                     <div class="mt-6">
-                        <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
+                        <label for="email" class="block text-sm font-medium leading-5 text-gray-400">
                             Email Address
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
@@ -80,7 +82,7 @@
                     </div>
 
                     <div class="mt-6">
-                        <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
+                        <label for="password" class="block text-sm font-medium leading-5 text-gray-400">
                             Password
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
@@ -94,7 +96,7 @@
                     </div>
 
                     <div class="mt-6">
-                        <label for="password_confirmation" class="block text-sm font-medium leading-5 text-gray-700">
+                        <label for="password_confirmation" class="block text-sm font-medium leading-5 text-gray-400">
                             Confirm Password
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
@@ -121,4 +123,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
