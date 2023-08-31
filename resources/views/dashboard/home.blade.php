@@ -503,6 +503,11 @@ svg.results__dial {
   overflow: hidden !important;
 }
 
+.show_total_balance {
+  margin: 0px 0px 0 450px; 
+  
+}
+
 
     /* All the CSS For Dials End Here */
     </style>
@@ -521,7 +526,7 @@ svg.results__dial {
                     <h3 class="text flex text-lg font-medium leading-6 text-gray-600">
                         <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         @if(isset($section_title)){{ $section_title }}@else{{Auth::user()->name}} {{ ucwords(str_replace('-', ' ', Request::segment(2)) ?? 'profile') }} @endif
-                    </h3>
+                    <span class="show_total_balance">Your Portfolio Total: &nbsp;${{ $user_forex_balance + $user_crypto_balance }} USD</span></h3>
                 </div>
             </div>
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
@@ -535,21 +540,14 @@ svg.results__dial {
                     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
                     <script>
-                        const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-                        const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+                        const xValues = ['May','June','July','August','September'];
+                        const yValues = [1200,1800,3800,1900,2900];
 
                         new Chart("myChart", {
                             type: "line",
                             data: {
                                 labels: xValues,
                                 datasets: [{
-                                    // fill: true,
-                                    // lineTension: 0,
-                                    // // backgroundColor: "rgba(0,0,255,0.3)",
-                                    // backgroundColor: "rgba(116,154,217,0.4)",
-                                    // borderColor: "rgba(33,115,244,0.9)",
-                                    // data: yValues
-
                                     fill: true,
                                     lineTension: 0.2,
                                     backgroundColor: "rgba(116,154,217,0.4)",
@@ -569,7 +567,7 @@ svg.results__dial {
                             options: {
                                 legend: {display: false},
                                 scales: {
-                                    yAxes: [{ticks: {min: 5, max:16}}],
+                                    yAxes: [{ticks: {min: 500, max:5000}}],
                                 }
                             }
                         });
@@ -625,7 +623,7 @@ svg.results__dial {
                                 <text class="results__dial-effect results__text text-center" x="200" y="350" font-size="28" fill="#64d3de">CRYPTO</text>
                                 <text class="results__dial-results results__text" text-anchor="middle" x="250" y="285" fill="#64d3de">
                                     <tspan baseline-shift="super">$</tspan>
-                                    <tspan fill="#fff" class="results__dial-saving">{{ $user_balance ? $user_balance : 0 }}</tspan>
+                                    <tspan fill="#fff" class="results__dial-saving">{{ $user_crypto_balance ? $user_crypto_balance : 0 }}</tspan>
                                 </text>
                             </g>
                             <!-- <g class="results__dial-drag" fill="#fff">
@@ -681,7 +679,7 @@ svg.results__dial {
                                 <text class="results__dial-effect results__text text-center" x="175" y="350" font-size="28" fill="#64d3de">FIAT(FOREX)</text>
                                 <text class="results__dial-results results__text" text-anchor="middle" x="250" y="285" fill="#64d3de">
                                     <tspan baseline-shift="super">$</tspan>
-                                    <tspan fill="#fff" class="results__dial-saving">{{ $user_balance ? $user_balance : 0 }}</tspan>
+                                    <tspan fill="#fff" class="results__dial-saving">{{ $user_forex_balance ? $user_forex_balance : 0 }}</tspan>
                                 </text>
                             </g>
                             <!-- <g class="results__dial-drag" fill="#fff">
