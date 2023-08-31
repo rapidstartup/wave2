@@ -122,9 +122,11 @@
             background: #1e1e2d;
             border-color: #2b2b40;
         }
-        header#nav-header a {
+
+        /*header#nav-header a {
             color: #9ca3af;
-        }
+        }*/
+
         /* Header section ends */
 
         /* Main section */
