@@ -550,16 +550,17 @@ svg.results__dial {
                                 datasets: [{
                                     fill: true,
                                     lineTension: 0.2,
-                                    backgroundColor: "rgba(116,154,217,0.4)",
-                                    borderColor: "rgba(33,115,244,0.8)",
+                                    // backgroundColor: "rgba(116,154,217,0.4)",
+                                    backgroundColor: "rgba(168,85,247,0.2)",
+                                    borderColor: "rgba(168,85,247,0.8)",
                                     borderWidth: 3,
                                     pointBorderWidth: 2.5,
                                     pointHoverRadius: 6,
                                     pointRadius: 4,
-                                    pointBackgroundColor: "rgba(33,115,244,1)",
-                                    pointHoverBackgroundColor: "rgba(33,115,244,1)",
-                                    pointBorderColor: "rgba(33,115,244,1)",
-                                    pointHoverBorderColor: "rgba(33,115,244,1)",
+                                    pointBackgroundColor: "rgba(168,85,247,1)",
+                                    pointHoverBackgroundColor: "rgba(168,85,247,1)",
+                                    pointBorderColor: "rgba(168,85,247,1)",
+                                    pointHoverBorderColor: "rgba(168,85,247,1)",
                                     steppedLine: false,
                                     data: yValues
                                 }]
