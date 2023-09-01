@@ -540,8 +540,8 @@ svg.results__dial {
                     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
                     <script>
-                        const xValues = ['May','June','July','August','September'];
-                        const yValues = [1200,1800,3800,1900,2900];
+                        const xValues = {!! json_encode($months) ? json_encode($months) : '' !!};
+                        const yValues = {!! json_encode($total_balances) ? json_encode($total_balances) : '' !!};
 
                         new Chart("myChart", {
                             type: "line",
@@ -568,7 +568,7 @@ svg.results__dial {
                             options: {
                                 legend: {display: false},
                                 scales: {
-                                    yAxes: [{ticks: {min: 500, max:5000}}],
+                                    yAxes: [{ticks: {min: 50, max:5000}}],
                                 }
                             }
                         });
