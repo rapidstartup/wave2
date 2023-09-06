@@ -568,7 +568,7 @@ svg.results__dial {
                             options: {
                                 legend: {display: false},
                                 scales: {
-                                    yAxes: [{ticks: {min: 50, max:5000}}],
+                                    yAxes: [{ticks: {min: 50, max:15000}}],
                                 }
                             }
                         });
