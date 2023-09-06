@@ -48,8 +48,9 @@ class DashboardHomeController extends Controller
 
 
         $monthly_interest = MonthlyInterest::where('month', '=', 'june')->first();
-        $user_forex_balance = Auth::user()->balance;
-        $user_crypto_balance = Auth::user()->balance_in_crypto;
+        $user_forex_balance = Auth::user()->balance()->first()->balance_in_forex;
+        $user_crypto_balance = Auth::user()->balance()->first()->balance_in_crypto;
+
 
         return view('dashboard.home', compact('monthly_interest', 'user_forex_balance', 'user_crypto_balance', 'total_balances', 'months'));
     }
