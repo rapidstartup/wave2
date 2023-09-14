@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+use App\Http\Composers\TransactionData;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -58,6 +60,8 @@ class AppServiceProvider extends ServiceProvider
 
             return true;
         });
+
+         View::composer('components.transaction_table', TransactionData::class);
     }
 
     private function setSchemaDefaultLength(): void
