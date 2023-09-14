@@ -33,9 +33,6 @@
                     Amount
                 </th>
                 <th scope="col" class="px-6 py-4 text-center">
-                    Description
-                </th>
-                <th scope="col" class="px-6 py-4 text-center">
                     Balance Type
                 </th>
                 <th scope="col" class="px-6 py-4 text-center">
@@ -54,9 +51,6 @@
                         </td>
                         <td class="px-6 py-5">
                             ${{$transaction->amount}}
-                        </td>
-                        <td class="px-6 py-5">
-                            {!! \Illuminate\Support\Str::limit($transaction->description, 20) !!}
                         </td>
                         <td class="px-6 py-5">
                             {{$transaction->balance_type}}
