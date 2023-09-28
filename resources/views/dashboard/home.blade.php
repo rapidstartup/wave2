@@ -19,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <style>
-    
+
         #right-panel
         {
             height: 1150px;
@@ -120,7 +120,7 @@
             background-color: #151521;
             color: #9ca3af;
         }
-        
+
 
         /*Chart CSS*/
         #myChart {
@@ -504,8 +504,8 @@ svg.results__dial {
 }
 
 .show_total_balance {
-  margin: 0px 0px 0 450px; 
-  
+  margin: 0px 0px 0 450px;
+
 }
 
 
@@ -530,7 +530,7 @@ svg.results__dial {
                 </div>
             </div>
             <div class="uk-card-body h-24 min-h-0 md:min-h-full">
-             
+
                 <!-- ---------------------------------------- -->
 
                 <div class="platinum-wallet">
@@ -581,12 +581,12 @@ svg.results__dial {
                     <span class="text text-lg font-medium leading-6 text-gray-600">BALANCE STATUS</span>
                     <p class="text block text-sm font-medium leading-5 text-gray-700 mt-2"><b>Here is the status of your balance by type.</b></p>
 
-                    <div class="container mt-10">
-                        
+                    <div class="container mt-10 flex-col sm:gap-6 md:gap-0">
+
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" class="results__dial">
-                            
+
                             <title>Your Crypto Balance</title>
-                            
+
                             <g class="results__dial-circles">
                                 <path class="results__dial-outer" d="M260,64c110.46,0,200,89.54,200,200S370.46,464,260,464,60,374.46,60,264,149.54,64,260,64" fill="none" stroke="#64d3de" stroke-miterlimit="10" opacity="0.6"/>
                                 <path class="results__dial-track" d="M260,86A178,178,0,1,1,82,264,178,178,0,0,1,260,86" fill="none" stroke="#50afb8" stroke-miterlimit="10" stroke-width="8"/>
@@ -707,7 +707,7 @@ svg.results__dial {
 
 
     <script>
- 
+
 /*  ==========================================================================
     Dial
     ========================================================================== */
