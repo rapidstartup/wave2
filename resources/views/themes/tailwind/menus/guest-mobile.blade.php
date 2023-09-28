@@ -4,8 +4,8 @@
             <div class="pt-6 pb-6 space-y-6">
                 <div class="flex items-center justify-between px-8 mt-1">
                     <div>
-                        <a href="https://ppc.rapidstartup.io" class="flex items-center justify-center space-x-3 transition-all duration-1000 ease-out transform text-wave-500">
-                            <img class="h-9" src="https://ppc.rapidstartup.io/storage/themes/July2023/c5nCiMchTt9wLoNeg23M.png" alt="Company name">
+                        <a href="https://platinumplus.capital" class="flex items-center justify-center space-x-3 transition-all duration-1000 ease-out transform text-wave-500">
+                            <img class="h-9" src="https://platinumplus.capital/storage/themes/July2023/c5nCiMchTt9wLoNeg23M.png" alt="Company name">
                         </a>
                     </div>
                     <div class="-mr-2">
