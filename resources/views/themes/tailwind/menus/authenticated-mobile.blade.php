@@ -1,6 +1,6 @@
 <div x-show="mobileMenuOpen" x-transition:enter="duration-300 ease-out scale-100" x-transition:enter-start="opacity-50 scale-110" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition duration-75 ease-in scale-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-100" class="absolute inset-x-0 top-0 transition origin-top transform md:hidden">
     <div class="rounded-lg shadow-lg">
-        <div class="bg-black divide-y-2 rounded-lg shadow-xs divide-gray-50">
+        <div class="bg-black divide-y-2 rounded-lg shadow-xs divide-gray-50 hidden">
             <div class="px-8 pt-6 pb-8 space-y-6">
                 <div class="flex items-center justify-between mt-1">
                     <div>
