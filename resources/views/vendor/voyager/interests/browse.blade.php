@@ -3,7 +3,6 @@
 
 @section('page_header')
     <div class="container-fluid" style="text-align: center; width: 50%; margin-top: 60px">
-
         @if($month == 6 && $day == 28)
         <h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
@@ -13,7 +12,6 @@
         <p style="font-size: 18px">The following procedure will apply the current month's interest percentage to each user's balance sheet. This will be reflected until the first of the following month along with the winning amounts of each deposit.</p>
         <br>
         <p style="font-size: 18px">Interest percentage to apply: <b>{{ $monthlyInterest->interest_value }}%</b></p>
-{{--        <p style="font-size: 18px">{{ $month }} and {{ $day }}</p>--}}
 
         <br>
 

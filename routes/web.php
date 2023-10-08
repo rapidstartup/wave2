@@ -19,6 +19,58 @@ use App\Http\Controllers\Dashboard\DashboardHomeController;
 use App\Http\Controllers\Dashboard\TransactionsController;
 use App\Http\Controllers\Dashboard\WalletController;
 use App\Http\Controllers\Dashboard\SupportController;
+use App\Models\MonthlyInterest;
+use App\Models\InterestLog;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Http\Response; // Import the Response class
+
+
+Route::get('cron', function(){
+  $last_day = Carbon::now()->endOfMonth()->format('d');
+  $today = Carbon::now()->format('d');
+  $month = lcfirst(Carbon::now()->format('F'));
+  $year = Carbon::now()->format('Y');
+  $rate = MonthlyInterest::where('month',$month)->where('year',$year)->first();
+  if($rate){
+      $users = User::with('balance')->whereHas('balance')->latest()->get();
+      foreach($users as $user){
+          $balance = $user->balance()->first();
+          if($balance){
+              $check = InterestLog::whereUserId($user->id)->whereDay('created_at', now()->day)->first();
+              if(!$check){
+                  $interest = new InterestLog;
+                  $interest->user_id = $user->id;
+                  $interest->forex_amount = $balance->balance_in_forex;
+                  $interest->crypto_amount = $balance->balance_in_crypto;
+                  $interest->forex_rate = $rate->interest_type_forex;
+                  $interest->crypto_rate = $rate->interest_type_crypto;
+                  $interest->forex_interest = $balance->balance_in_forex * (($rate->interest_type_forex/100)/30);
+                  $interest->crypto_interest = $balance->balance_in_crypto * (($rate->interest_type_crypto/100)/30);
+                  $interest->save();
+              }
+          }
+      }
+  }
+  if($today == $last_day){
+      foreach($users as $user){
+          $balance = $user->balance()->first();
+          if($balance){
+              $interests = InterestLog::whereUserId($user->id)->whereStatus(0)->get();
+              $balance->balance_in_forex = $balance->balance_in_forex + $interests->sum('forex_interest');
+              $balance->balance_in_crypto = $balance->balance_in_crypto + $interests->sum('crypto_interest');
+              $balance->save();
+              foreach($interests as $interest){
+                  $interest->status = 1;
+                  $interest->save();
+              }
+          }
+      }
+  }
+  //return a response 200 ok , cron runned successfully
+  return "200 ok";
+
+});
 
 // Authentication routes
 Auth::routes();
@@ -26,6 +78,8 @@ Auth::routes();
 // Voyager Admin routes
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    $namespacePrefix = '\\'.config('voyager.controllers.namespace').'\\';
+    Route::get('interest/transactions', ['uses' => $namespacePrefix.'VoyagerController@interestTransactions',   'as' => 'admin.interest.transactions']);
 });
 
 

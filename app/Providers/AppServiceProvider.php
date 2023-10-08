@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\Http\Composers\TransactionData;
+use App\Http\Composers\InterestData;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -62,6 +63,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
          View::composer('components.transaction_table', TransactionData::class);
+         View::composer('components.interest_table', InterestData::class);
     }
 
     private function setSchemaDefaultLength(): void

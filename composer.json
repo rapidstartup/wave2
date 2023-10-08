@@ -24,6 +24,7 @@
         "tymon/jwt-auth": "@dev"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.9",
         "fakerphp/faker": "^1.9.1",
         "laravel/dusk": "^6.0",
         "laravel/sail": "^1.0.1",
